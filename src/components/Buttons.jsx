@@ -5,7 +5,7 @@ import * as actions from '../store/actionCreators'
 
 function Buttons() {
   const handleClick = (action) => {
-    store.dispatch(action())
+    // store.dispatch(action())
   }
 
   return (
