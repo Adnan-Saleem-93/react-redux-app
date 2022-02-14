@@ -1,32 +1,28 @@
 import React from 'react'
 import {ButtonGroup, Button} from '@mui/material'
-import store from '../store/store'
-import * as actions from '../store/actionCreators'
 
 function Buttons() {
-  const handleClick = (action) => {
-    // store.dispatch(action())
-  }
+  const handleClick = (action) => {}
 
   return (
     <>
       <ButtonGroup variant="outlined" aria-label="outlined button group">
-        <Button mr={1} title="Increase Timer" onClick={() => handleClick(actions.timerIncreased)}>
+        <Button mr={1} title="Increase Timer" onClick={() => handleClick()}>
           +
         </Button>
-        <Button mr={1} title="Start Timer" onClick={() => handleClick(actions.timerStarted)}>
+        <Button mr={1} title="Start Timer" onClick={() => handleClick()}>
           Start
         </Button>
-        <Button mr={1} title="Stop Timer" onClick={() => handleClick(actions.timerStopped)}>
+        <Button mr={1} title="Stop Timer" onClick={() => handleClick()}>
           Stop
         </Button>
-        <Button mr={1} title="Create Lap" onClick={() => handleClick(actions.lapCreated)}>
+        <Button mr={1} title="Create Lap" onClick={() => handleClick()}>
           Lap
         </Button>
-        <Button mr={1} title="Reset Timer" onClick={() => handleClick(actions.timerReset)}>
+        <Button mr={1} title="Reset Timer" onClick={() => handleClick()}>
           Reset
         </Button>
-        <Button title="Decrease Timer" onClick={() => handleClick(actions.timerDecreased)}>
+        <Button title="Decrease Timer" onClick={() => handleClick()}>
           -
         </Button>
       </ButtonGroup>
