@@ -1,6 +1,9 @@
 import {configureStore} from '@reduxjs/toolkit'
+import stopWatchSlice from './stopwatchSlice'
 
 const store = configureStore({
-  reducer: {}
+  reducer: {
+    stopwatch: stopWatchSlice
+  }
 })
 export default store
