@@ -43,7 +43,7 @@ export const stopWatchSlice = createSlice({
       console.log(state)
     },
     reset: (state) => {
-      console.log(state)
+      state.timer.hours = state.timer.minutes = state.timer.seconds = 0
     },
     createLap: (state) => {
       console.log(state)
