@@ -6,7 +6,13 @@ import {useDispatch} from 'react-redux'
 function Buttons() {
   const dispatch = useDispatch()
   const handleClick = (action) => {
-    dispatch(action())
+    if (action === start) {
+      setInterval(() => {
+        dispatch(action())
+      }, 10)
+    } else {
+      dispatch(action())
+    }
   }
 
   return (
