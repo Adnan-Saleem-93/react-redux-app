@@ -4,7 +4,7 @@ export const stopWatchSlice = createSlice({
   name: 'stopwatch',
   initialState: {
     timer: {
-      hours: 2,
+      hours: 0,
       minutes: 0,
       seconds: 0
     }
@@ -39,38 +39,23 @@ export const stopWatchSlice = createSlice({
       }
     },
     start: (state) => {
+      console.count('start timer called')
       let {hours, minutes, seconds} = state.timer
 
-      if (hours !== 0 || minutes !== 0 || seconds !== 0) {
-        state.timer.seconds--
+      if (seconds === 0 && (hours !== 0 || minutes !== 0)) {
+        state.timer.seconds = 59
 
-        if (seconds === 0) {
-          state.timer.seconds = 59
-
-          if (minutes !== 0) {
-            state.timer.minutes--
-          }
-          if (hours !== 0) {
-            state.timer.hours--
-
-            if (minutes === 0) {
-              state.timer.minutes = 59
-            }
-          }
+        if (minutes === 0 && hours !== 0) {
+          state.timer.minutes = 59
+          state.timer.hours--
+        }
+        if (minutes !== 0) {
+          state.timer.minutes--
         }
       }
-      // if (seconds === 0) {
-      //   state.timer.seconds = 59
-      // }
-      // if (hours !== 0 && seconds === 0) {
-      //   state.timer.hours--
-      // }
-      // if (minutes === 0) {
-      //   state.timer.minutes = 59
-      // }
-      // if (minutes !== 0 && seconds === 0) {
-      //   state.timer.minutes--
-      // }
+      if (seconds !== 0) {
+        state.timer.seconds--
+      }
     },
     stop: (state) => {
       console.log(state)
