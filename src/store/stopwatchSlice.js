@@ -39,26 +39,34 @@ export const stopWatchSlice = createSlice({
       }
     },
     start: (state) => {
-      console.count('start timer called')
       let {hours, minutes, seconds} = state.timer
 
+      // check if seconds are 0 then only decrease seconds if hours or minutes are not 0
       if (seconds === 0 && (hours !== 0 || minutes !== 0)) {
+        // if seconds are 0, we need to set to 59, because a stopwatch only has 60 seconds
         state.timer.seconds = 59
 
+        // if minutes are 0 but hours are not 0,
+        // then set minutes to 59 and decrease value of hours
         if (minutes === 0 && hours !== 0) {
           state.timer.minutes = 59
           state.timer.hours--
         }
+        //if minutes are not 0, only decrease minutes then.
         if (minutes !== 0) {
           state.timer.minutes--
         }
       }
+      // if seconds are not 0, decrease them
       if (seconds !== 0) {
         state.timer.seconds--
       }
     },
     stop: (state) => {
-      console.log(state)
+      let {hours, minutes, seconds} = state.timer
+      state.timer.hours = hours
+      state.timer.minutes = minutes
+      state.timer.seconds = seconds
     },
     reset: (state) => {
       state.timer.hours = state.timer.minutes = state.timer.seconds = 0

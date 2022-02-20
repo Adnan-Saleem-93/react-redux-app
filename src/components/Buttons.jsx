@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from 'react-redux'
 function Buttons() {
   let {hours, minutes, seconds} = useSelector((state) => state.stopwatch.timer)
   const [timeInSeconds, setTimeInSeconds] = useState(0)
+  const [intervalId, setIntervalId] = useState(0)
 
   useEffect(() => {
     let totalMinutes = hours * 60 + minutes
@@ -16,16 +17,23 @@ function Buttons() {
   const dispatch = useDispatch()
   const handleClick = (action) => {
     if (action === start) {
-      let count = 0
-      let intervalId = setInterval(() => {
-        count += 1
-        if (count <= timeInSeconds) {
-          dispatch(action())
-        } else {
-          clearInterval(intervalId)
-        }
-      }, 1000)
+      let id = 0
+      if (hours !== 0 || minutes !== 0 || seconds !== 0) {
+        let count = 0
+        id = setInterval(() => {
+          count += 1
+          if (count <= timeInSeconds) {
+            dispatch(action())
+          } else {
+            clearInterval(id)
+          }
+        }, 1000)
+      }
+      setIntervalId(id)
     } else {
+      if (intervalId !== 0 && (action === reset || action === stop)) {
+        clearInterval(intervalId)
+      }
       dispatch(action())
     }
   }
