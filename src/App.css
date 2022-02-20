@@ -2,16 +2,6 @@
   margin: 2rem 0 !important;
 }
 
-.MuiButtonGroup-root > .MuiButton-root {
-  margin: 0 0.5rem !important;
-  color: #000 !important;
-  border: 1px solid rgba(73, 167, 159, 0.5) !important;
-  box-shadow: 0px 1px 2px 1px rgb(67 136 130 / 31%) !important;
-  border-radius: 4px !important;
-}
-.MuiButton-root:hover {
-  box-shadow: 0px 2px 2px 2px rgba(73, 138, 132, 0.445) !important;
-}
-.MuiAlert-icon {
+.css-1ogdwqe-MuiStack-root {
   display: none !important;
 }

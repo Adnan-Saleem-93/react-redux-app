@@ -7,7 +7,8 @@ export const stopWatchSlice = createSlice({
       hours: 0,
       minutes: 0,
       seconds: 0
-    }
+    },
+    isTimerStarted: false
   },
   reducers: {
     increase: (state) => {
@@ -41,6 +42,7 @@ export const stopWatchSlice = createSlice({
     start: (state) => {
       let {hours, minutes, seconds} = state.timer
 
+      state.isTimerStarted = true
       // check if seconds are 0 then only decrease seconds if hours or minutes are not 0
       if (seconds === 0 && (hours !== 0 || minutes !== 0)) {
         // if seconds are 0, we need to set to 59, because a stopwatch only has 60 seconds
@@ -63,13 +65,11 @@ export const stopWatchSlice = createSlice({
       }
     },
     stop: (state) => {
-      let {hours, minutes, seconds} = state.timer
-      state.timer.hours = hours
-      state.timer.minutes = minutes
-      state.timer.seconds = seconds
+      state.isTimerStarted = false
     },
     reset: (state) => {
       state.timer.hours = state.timer.minutes = state.timer.seconds = 0
+      state.isTimerStarted = false
     },
     createLap: (state) => {
       console.log(state)
