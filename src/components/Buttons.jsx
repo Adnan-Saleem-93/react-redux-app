@@ -31,11 +31,12 @@ function Buttons() {
           // if count value is less equal to the total seconds timer is supposed to run
           // only then the start action should be dispatched
           if (count <= timeInSeconds) {
-            dispatch(action())
+            dispatch(start())
           }
           // else invoke the clearInterval method
           else {
             clearInterval(id)
+            dispatch(stop())
           }
         }, 1000)
       }
