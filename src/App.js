@@ -23,6 +23,7 @@ function App() {
           bgcolor: 'background.paper',
           borderRadius: 1
         }}
+        className="app"
       >
         <Heading />
         <Stopwatch />

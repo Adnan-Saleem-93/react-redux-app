@@ -71,6 +71,7 @@ export const stopWatchSlice = createSlice({
     reset: (state) => {
       state.timer.hours = state.timer.minutes = state.timer.seconds = 0
       state.isTimerStarted = false
+      state.laps = []
     },
     createLap: (state) => {
       let {hours, minutes, seconds} = state.timer
@@ -81,9 +82,12 @@ export const stopWatchSlice = createSlice({
       let formattedTime = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`
 
       state.laps.push(formattedTime)
+    },
+    clearLaps: (state) => {
+      state.laps = []
     }
   }
 })
 
-export const {increase, decrease, start, stop, reset, createLap} = stopWatchSlice.actions
+export const {increase, decrease, start, stop, reset, createLap, clearLaps} = stopWatchSlice.actions
 export default stopWatchSlice.reducer

@@ -1,3 +1,27 @@
 .MuiBox-root > * {
   margin: 2rem 0 !important;
 }
+.app {
+  margin: 1rem auto !important;
+  width: 50%;
+  border-radius: 6px;
+  background: linear-gradient(102deg, #8160cbf2, #322f3eb0);
+  padding: 0 !important;
+}
+.app * {
+  color: #e3dbdb !important;
+}
+.MuiButton-root {
+  border-color: rgba(214, 202, 202, 0.678) !important;
+}
+.MuiButton-root:hover {
+  background: linear-gradient(102deg, #594486f2, #322f3eb0) !important;
+}
+.MuiButton-root:disabled {
+  color: #e3dbdb63 !important;
+  border-color: #e3dbdb63 !important;
+}
+
+body {
+  background-color: #bfb3cd80 !important;
+}
