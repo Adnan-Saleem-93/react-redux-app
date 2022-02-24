@@ -1,25 +1,33 @@
-.MuiBox-root > * {
+.MuiGrid-root * {
+  text-align: center !important;
+}
+
+.MuiGrid-root > * {
   margin: 2rem 0 !important;
 }
 .app {
-  margin: 1rem auto !important;
-  width: 50%;
-  border-radius: 6px;
-  background: linear-gradient(102deg, #8160cbf2, #322f3eb0);
-  padding: 0 !important;
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
 }
 .app * {
-  color: #e3dbdb !important;
+  color: #000000 !important;
+}
+.app > * {
+  padding: 2rem !important;
 }
 .MuiButton-root {
-  border-color: rgba(214, 202, 202, 0.678) !important;
+  border-color: rgba(85, 71, 167, 0.678) !important;
 }
 .MuiButton-root:hover {
-  background: linear-gradient(102deg, #594486f2, #322f3eb0) !important;
+  background-image: linear-gradient(
+    83.2deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgb(99 88 238 / 77%) 94.3%
+  );
 }
 .MuiButton-root:disabled {
-  color: #e3dbdb63 !important;
-  border-color: #e3dbdb63 !important;
+  color: #332e2e63 !important;
+  border-color: #352f2f63 !important;
 }
 
 body {
