@@ -9,13 +9,9 @@ function Laps() {
 
   return (
     <>
-      <Stack
-        sx={{width: '30%'}}
-        spacing={2}
-        style={{display: `${laps.length > 0 ? 'block' : 'none'}`}}
-        className="laps"
-      >
-        {laps.length > 0 && (
+      <Stack sx={{width: '100%'}} spacing={2} className="laps">
+        <h3>Laps</h3>
+        {/* {laps.length > 0 && (
           <Button
             variant="outlined"
             style={{width: '100%', color: 'white'}}
@@ -23,23 +19,22 @@ function Laps() {
           >
             Clear Laps
           </Button>
+        )} */}
+        {laps.length > 0 ? (
+          laps.map((item, index) => {
+            return <Box key={index}>{item}</Box>
+          })
+        ) : (
+          <Box>0 Laps</Box>
         )}
-        {laps.map((item, index) => {
-          return (
-            <Box
-              sx={{
-                textAlign: 'center',
-                backgroundColor: '#add8e69e',
-                padding: '4px',
-                borderRadius: '4px',
-                color: 'black !important'
-              }}
-              key={index}
-            >
-              {item}
-            </Box>
-          )
-        })}
+        <Button
+          variant="outlined"
+          id="btn-clear"
+          style={{width: '50%', color: 'black'}}
+          onClick={() => dispatch(clearLaps())}
+        >
+          Clear Laps
+        </Button>
       </Stack>
     </>
   )

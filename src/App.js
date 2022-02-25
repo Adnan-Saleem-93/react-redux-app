@@ -11,9 +11,9 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} md={6} lg={8}>
+          <Grid item xs={12} sm={6} md={6} lg={6}>
             <Box
               sx={{
                 display: 'flex',
@@ -34,7 +34,7 @@ function App() {
             </Box>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={6} lg={4}>
+          <Grid item xs={12} sm={6} md={6} lg={6}>
             <Laps />
           </Grid>
         </Grid>

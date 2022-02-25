@@ -5,9 +5,13 @@
 .MuiGrid-root > * {
   margin: 2rem 0 !important;
 }
-.app {
+.app,
+.laps {
   background-color: #0093e9;
   background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}
+.laps {
+  height: 80%;
 }
 .app * {
   color: #000000 !important;
@@ -29,7 +33,19 @@
   color: #332e2e63 !important;
   border-color: #352f2f63 !important;
 }
-
+.MuiBox-root {
+  text-align: center !important;
+  background-color: #add8e69e !important;
+  padding: 4px !important;
+  border-radius: 4px !important;
+  color: black !important;
+}
 body {
   background-color: #bfb3cd80 !important;
+}
+
+.laps > .MuiBox-root,
+#btn-clear {
+  width: 75% !important;
+  margin: 0 auto !important;
 }
