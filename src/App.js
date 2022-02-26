@@ -23,12 +23,11 @@ function App() {
                 alignContent: 'space-around',
                 p: 2,
                 m: 1,
-                bgcolor: 'background.paper',
-                borderRadius: 2
+                bgcolor: 'background.paper'
               }}
               className="app"
             >
-              <Heading />
+              <Heading text="Redux Countdown Timer" />
               <Stopwatch />
               <Buttons />
             </Box>

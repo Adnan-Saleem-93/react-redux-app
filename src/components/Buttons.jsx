@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react'
-import {Stack, Button} from '@mui/material'
+import {Stack} from '@mui/material'
 import {increase, decrease, reset, start, stop, createLap} from '../store/stopwatchSlice'
 import {useDispatch, useSelector} from 'react-redux'
 import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
+import ButtonComponent from './Button'
 
 function Buttons() {
   let {hours, minutes, seconds} = useSelector((state) => state.stopwatch.timer)
@@ -58,53 +59,40 @@ function Buttons() {
       {/* <ButtonGroup variant="outlined" aria-label="outlined button group">
       </ButtonGroup> */}
       <Stack direction="row" spacing={2}>
-        <Button
-          mr={1}
+        <ButtonComponent
           title="Increase Timer"
-          variant="outlined"
           onClick={() => handleClick(increase)}
           disabled={isTimerStarted}
-        >
-          <AddIcon />
-        </Button>
-        <Button
-          mr={1}
+          content={<AddIcon />}
+        />
+        <ButtonComponent
           title="Start Timer"
           onClick={() => handleClick(start)}
           disabled={isTimerStarted}
-          variant="outlined"
-        >
-          Start
-        </Button>
-        <Button
-          mr={1}
+          content="Start"
+        />
+
+        <ButtonComponent
           title="Stop Timer"
-          variant="outlined"
           onClick={() => handleClick(stop)}
           disabled={!isTimerStarted}
-        >
-          Stop
-        </Button>
-        <Button
-          mr={1}
+          content="Stop"
+        />
+
+        <ButtonComponent
           title="Create Lap"
-          variant="outlined"
           onClick={() => handleClick(createLap)}
           disabled={!isTimerStarted}
-        >
-          Lap
-        </Button>
-        <Button mr={1} title="Reset Timer" variant="outlined" onClick={() => handleClick(reset)}>
-          Reset
-        </Button>
-        <Button
+          content="Lap"
+        />
+
+        <ButtonComponent title="Reset Timer" onClick={() => handleClick(reset)} content="Reset" />
+        <ButtonComponent
           title="Decrease Timer"
-          variant="outlined"
           onClick={() => handleClick(decrease)}
           disabled={isTimerStarted}
-        >
-          <RemoveIcon />
-        </Button>
+          content={<RemoveIcon />}
+        />
       </Stack>
     </>
   )
