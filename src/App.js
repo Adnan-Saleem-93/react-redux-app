@@ -11,9 +11,9 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <Container maxWidth="lg">
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} md={6} lg={6}>
+      <Container maxWidth="md">
+        <Grid container>
+          <Grid item xs={12} sm={10} md={10} lg={10}>
             <Box
               sx={{
                 display: 'flex',
@@ -30,11 +30,8 @@ function App() {
               <Heading text="Redux Countdown Timer" />
               <Stopwatch />
               <Buttons />
+              <Laps />
             </Box>
-          </Grid>
-
-          <Grid item xs={12} sm={6} md={6} lg={6}>
-            <Laps />
           </Grid>
         </Grid>
       </Container>
