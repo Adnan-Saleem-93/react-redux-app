@@ -5,13 +5,10 @@
 .MuiGrid-root > * {
   margin: 0.5rem auto !important;
 }
-.app,
-.laps {
+.app {
   background-color: #0093e9;
   background-image: linear-gradient(to right bottom, rgb(0, 127, 255), rgb(0, 89, 178) 120%);
-  /* height: 70vh; */
   border-radius: 8px !important;
-  /* justify-content: space-around !important; */
   box-shadow: 5px 7px 13px 4px #ab9b9bd4;
 }
 
@@ -36,8 +33,7 @@
   text-align: center !important;
   border: 1px solid hsla(195, 53%, 79%, 0.62) !important;
   border-radius: 6px;
-  padding: 4px !important;
-
+  padding: 1rem !important;
   color: black !important;
 }
 body {
@@ -46,11 +42,6 @@ body {
 body * {
   box-sizing: border-box;
 }
-/* .laps > .MuiBox-root,
-#btn-clear {
-  width: 75% !important;
-  margin: 0 auto !important;
-} */
 .lapBox,
 .lapBoxEmpty {
   padding: 0.5rem !important;
@@ -64,8 +55,8 @@ body * {
 #timer {
   font-weight: 700 !important;
 }
-.MuiStack-root {
-  /* align-items: center !important; */
+#buttons {
+  flex-wrap: wrap !important;
 }
 #laps {
   max-width: 100%;

@@ -56,9 +56,7 @@ function Buttons() {
 
   return (
     <>
-      {/* <ButtonGroup variant="outlined" aria-label="outlined button group">
-      </ButtonGroup> */}
-      <Stack direction="row" spacing={2}>
+      <Stack direction="row" spacing={2} id="buttons">
         <ButtonComponent
           title="Increase Timer"
           onClick={() => handleClick(increase)}
